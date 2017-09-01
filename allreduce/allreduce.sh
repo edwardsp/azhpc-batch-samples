@@ -34,7 +34,7 @@ for NPROCS in $NPROCS_LIST; do
 	done
 done
 
-OUTFILE=allreduce_${NAME_TAG}_$(date +"%Y-%m-%d_%H-%M-%S").csv
+OUTFILE=allreduce${NAME_TAG}_$(date +"%Y-%m-%d_%H-%M-%S").csv
 
 for MSG_SZ in 8 16; do
 	echo "MSG_SZ=${MSG_SZ}" >> $OUTFILE
