@@ -50,5 +50,6 @@ for MSG_SZ in 8 16; do
 			echo -n " $(grep -E " $MSG_SZ[ ]+$NITER " IMB_Allreduce_${NITER}_${NP}_${NPROCS}x${PPN}${NAME_TAG}.log | sed 's/  */ /g' | cut -d' ' -f 6)" >> $OUTFILE
 		done
 		echo >> $OUTFILE
+	done
 done
 
