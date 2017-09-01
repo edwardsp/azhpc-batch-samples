@@ -26,7 +26,7 @@ done
 
 OUTFILE=allreduce_${NPROCS}_${NAME_TAG}_$(date +"%Y-%m-%d_%H-%M-%S").csv
 for MSG_SZ in 8 16; do
-	echo "MSG_SZ=${MSG_SZ}" > $OUTFILE
+	echo "MSG_SZ=${MSG_SZ}" >> $OUTFILE
 	echo -n "NPROCS/PPN" >> $OUTFILE
 	for PPN in $PPN_LIST; do
 		echo -n " ${PPN}" >> $OUTFILE
