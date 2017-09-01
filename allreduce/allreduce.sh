@@ -21,7 +21,7 @@ AZURE_MPI_FLAGS="-genv I_MPI_FABRICS shm:dapl -genv I_MPI_DAPL_PROVIDER ofa-v2-i
 
 for PPN in $PPN_LIST; do
 	NP=$(bc <<< "$NPROCS * $PPN")
-	mpirun -hosts $AZ_BATCH_HOST_LIST -np $NP -ppn $PPN -hostfile $HOME/bin/hostlisti $AZURE_MPI_FLAGS $MPI_FLAGS IMB-MPI1 Allreduce -iter ${NITER} -npmin $NP -msglog 3:4 -time 1000000 2>&1 | tee IMB_Allreduce_${NITER}_${NP}_${NPROCS}x${PPN}${NAME_TAG}.log
+	mpirun -hosts $AZ_BATCH_HOST_LIST -np $NP -ppn $PPN $AZURE_MPI_FLAGS $MPI_FLAGS IMB-MPI1 Allreduce -iter ${NITER} -npmin $NP -msglog 3:4 -time 1000000 2>&1 | tee IMB_Allreduce_${NITER}_${NP}_${NPROCS}x${PPN}${NAME_TAG}.log
 done
 
 OUTFILE=allreduce_${NPROCS}_${NAME_TAG}_$(date +"%Y-%m-%d_%H-%M-%S").csv
