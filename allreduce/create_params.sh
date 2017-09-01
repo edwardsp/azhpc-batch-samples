@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OUTPUT_STORAGE=$1
-NPROCS_LIST=$2
+NPROCS=$2
 PPN_LIST=$3
 NITER=$4
 NAME_TAG=$5
@@ -33,7 +33,7 @@ cat << EOF
 	],	
 	"multiInstanceSettings":
 	{
-		"numberOfInstances" : 2,
+		"numberOfInstances" : $NPROCS,
 		"coordinationCommandLine" : "hostname",
 		"commonResourceFiles": [ ]
 	},
